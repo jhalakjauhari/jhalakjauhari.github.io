@@ -66,5 +66,26 @@
   <footer>
     <p>©️ 2024 ESG. All rights reserved.</p>
   </footer>
+
+    <!-- JavaScript for Smooth Scrolling -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent default jump
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          // Scroll to target section
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
